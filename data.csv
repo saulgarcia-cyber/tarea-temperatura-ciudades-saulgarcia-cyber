@@ -1,3 +1,10 @@
+df = pd.read_csv('data.csv')
+
+def kelvin_to_celsius(kelvin):
+    return kelvin - 273.15
+
+df_celsius = df.copy()
+df_celsius[['San Diego', 'Phoenix', 'Toronto']] = df_celsius[['San Diego', 'Phoenix',  'Toronto']].apply(kelvin_to_celsius)
 Datetime,San Diego,Phoenix,Toronto
 01/01/16 0:00,289,288,274
 01/01/16 1:00,288,287,274
@@ -8782,4 +8789,5 @@ Datetime,San Diego,Phoenix,Toronto
 31/12/16 20:00,288,289,277
 31/12/16 21:00,288,289,277
 31/12/16 22:00,288,289,277
+
 31/12/16 23:00,287,289,276
